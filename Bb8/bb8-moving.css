@@ -1,0 +1,404 @@
+.droid {
+  --size: 140px;
+  position: absolute;
+  margin-left: 0;
+  width: var(--size);
+  bottom: 20%;
+  left: 10%;
+  z-index: 4;
+}
+
+.bb8 {
+  animation: wobble 3s ease-in-out infinite;
+}
+
+.radios {
+  position: absolute;
+  transition: left 0.6s;
+  left: 22%;
+  animation: bounce 0.5s alternate infinite;
+}
+
+.radio {
+  background: grey;
+  position: absolute;
+  width: 2px;
+}
+
+.radio.short {
+  height: 20px;
+  top: -60px;
+  left: 50px;
+}
+
+.radio.long {
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+  height: 36px;
+  top: -78px;
+  left: 56px;
+}
+
+.head {
+  position: absolute;
+  height: 56px;
+  width: 90px;
+  overflow: hidden;
+  z-index: 1;
+  background: #efeeee;
+  border-radius: 90px 90px 14px 14px;
+  margin-left: -45px;
+  top: -52px;
+  left: 71px;
+  animation: bounce 0.5s alternate infinite;
+}
+
+.band {
+  position: absolute;
+  width: 100%;
+}
+
+.band.one {
+  background: grey;
+  height: 6px;
+  z-index: 1;
+  top: 6px;
+  opacity: 0.8;
+}
+
+.band.two {
+  background: orange;
+  height: 6px;
+  z-index: 1;
+  top: 15px;
+  opacity: 0.8;
+}
+
+.small-band {
+  position: absolute;
+}
+
+.small-band.one {
+  background: orange;
+  height: 8px;
+  width: 14px;
+  bottom: 8px;
+  left: 4px;
+}
+
+.small-band.one:after {
+  background: linear-gradient(90deg, white 0%, #fafafa 49%, #f2f2f2 100%);
+  content: "";
+  height: 3px;
+  width: 10px;
+  display: block;
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  animation: color 1s ease infinite;
+}
+
+.small-band.two {
+  background: orange;
+  height: 8px;
+  width: 6px;
+  bottom: 8px;
+  left: 20px;
+}
+
+.small-band.three {
+  background: orange;
+  height: 8px;
+  width: 6px;
+  bottom: 8px;
+  right: 6px;
+}
+
+.band.three {
+  background: grey;
+  height: 6px;
+  z-index: 1;
+  bottom: 2px;
+  opacity: 0.8;
+}
+
+.eyes {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: left 0.6s;
+  left: 0%;
+  z-index: 10;
+}
+
+.eye {
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+
+.eye.one {
+  background: black;
+  border: 4px solid #efeeee;
+  height: 20px;
+  width: 20px;
+  top: 22%;
+  left: 34%;
+  z-index: 1;
+}
+
+.eye.one:after {
+  background: #c70a0a;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 6px;
+  width: 6px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  animation: eyebis 0.5s ease infinite;
+}
+
+.eye.two {
+  border: 1px solid black;
+  height: 16px;
+  width: 16px;
+  bottom: 25%;
+  right: 12%;
+  z-index: 1;
+}
+
+.eye.two:after {
+  background: black;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 12px;
+  width: 12px;
+  top: 2px;
+  right: 2px;
+}
+
+.eye.three {
+  background: black;
+  height: 7px;
+  width: 7px;
+  bottom: 20%;
+  left: 40%;
+  z-index: 1;
+  animation: eye 0.5s ease infinite;
+}
+
+.body {
+  overflow: hidden;
+  position: relative;
+  height: var(--size);
+  width: var(--size);
+  background: #efeeee;
+  border-radius: 50%;
+  animation: roll 2s linear infinite;
+}
+
+.lines {
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  opacity: 0.6;
+}
+
+.lines.two {
+  top: -10px;
+  left: -250px;
+}
+
+.circles {
+  background: orange;
+  border-radius: 50%;
+  border: 1px solid darkgrey;
+  height: 70px;
+  margin-left: -35px;
+  width: 70px;
+  position: absolute;
+}
+
+.circles:after {
+  background: #efeeee;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 70%;
+  margin-top: -35%;
+  margin-left: -35%;
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+}
+
+.circles.one {
+  margin-left: -40px;
+  height: 80px;
+  width: 90px;
+  top: 6%;
+  left: 50%;
+}
+
+.rec-one.top:after {
+  background: grey;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8%;
+  left: 45%;
+  height: 82%;
+  width: 82%;
+}
+
+.rec-one {
+  position: absolute;
+  border-top: 2px solid transparent;
+  border-left: 17px solid orange;
+  border-bottom: 2px solid transparent;
+  margin-left: 37px;
+  z-index: 1;
+  top: 7%;
+}
+
+.rec-one.top {
+  margin-left: -40px;
+  height: 17px;
+  width: 17px;
+  top: 10%;
+  right: 30%;
+  transform: rotate(90deg);
+}
+
+.rec-one.left {
+  margin-left: -40px;
+  height: 17px;
+  width: 17px;
+  top: 30%;
+  right: 50%;
+}
+
+.rec-one.right {
+  margin-left: -40px;
+  height: 17px;
+  width: 17px;
+  top: 30%;
+  right: 10%;
+  transform: rotate(180deg);
+}
+
+.rec-one.bottom {
+  margin-left: -40px;
+  height: 17px;
+  width: 17px;
+  top: 50%;
+  right: 30%;
+  transform: rotate(-90deg);
+}
+
+.rec-one.two {
+  margin-left: -29px;
+  height: 17px;
+  width: 17px;
+  /* bottom: 58%; */
+  top: 40%;
+  left: 66%;
+  transform: rotate(90deg);
+}
+
+.rec-one.three {
+  margin-left: -29px;
+  height: 17px;
+  width: 17px;
+  /* bottom: 58%; */
+  top: 40%;
+  left: 66%;
+  transform: rotate(90deg);
+}
+
+.circles.two {
+  height: 38px;
+  width: 76px;
+  transform: rotate(40deg);
+  top: 70%;
+  left: 18%;
+}
+
+.circles.two:after {
+  top: 110%;
+}
+
+.circles.three {
+  height: 30px;
+  transform: rotate(-50deg);
+  top: 66%;
+  left: 90%;
+}
+
+.circles.three:after {
+  top: 110%;
+}
+
+.shadow {
+  position: absolute;
+  background: grey;
+  height: 20px;
+  width: var(--size);
+  border-radius: 50%;
+  bottom: -5%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+@keyframes eye {
+  from {
+    background: grey;
+  }
+  to {
+    background: linear-gradient(90deg, white 0%, #d9d9d9 50%, #ebebeb 100%);
+  }
+}
+@keyframes eyebis {
+  from {
+    background: #c70a0a;
+  }
+  to {
+    background: #e81616;
+  }
+}
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 3px, 0);
+  }
+}
