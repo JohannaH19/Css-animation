@@ -357,6 +357,7 @@
   bottom: -5%;
   z-index: -1;
   opacity: 0.6;
+  animation: shadow linear 1s infinite alternate;
 }
 
 @keyframes wobble {
@@ -402,3 +403,13 @@
     transform: translate3d(0, 3px, 0);
   }
 }
+
+@keyframes shadow {
+  from {
+  	 transform: scale(0.9);
+  }
+	to {
+   	 transform: scale(1);
+  }
+}
+
