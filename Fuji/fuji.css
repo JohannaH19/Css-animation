@@ -1,3 +1,6 @@
+$radius: 15;
+$pink: #F4A698;
+
 body {
   background-color: black;
 }
@@ -21,18 +24,83 @@ body {
   //background-color: #2C3E50;
   //z-index: 2;
   overflow: hidden;
-  width: 250px;
-  height: 330px;
+  width: 230px;
+  height: 310px;
   top: 20px;
   z-index: -1;
   background: linear-gradient(0deg, rgba(255,195,113,1) 0%, rgba(255,95,109,1) 100%);
-  img {
-    height: 300px;
-    width: 300px;
-    z-index: 1;
+  .sun {
     position: absolute;
-    bottom: 0;
-    left: -39px;
+    background: red;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    right: 0;
+    animation: sun 40s linear infinite;
+    z-index: 1;
+  }
+  img {
+    height: 229px;
+    width: 270px;
+    z-index: 5;
+    position: absolute;
+    bottom: 65px;
+    left: -34px;
+  }
+  .bird{
+    position: absolute;
+    width: 0;
+    z-index: 4;
+    &:before{
+      content: '';
+      display: block;
+      border-radius: 50%;
+      border-width: 0.15em;
+      border-style: solid;
+      -webkit-clip-path: inset(0 0 50% 50%);
+      clip-path: inset(0 0 50% 50%);
+      position: absolute;
+      left: -1em;
+    }
+    &:after{
+      content: '';
+      display: block;
+      border-radius: 50%;
+      border-width: 0.15em;
+      border-style: solid;
+      -webkit-clip-path: inset(0 50% 50% 0);
+      clip-path: inset(0 50% 50% 0);
+      position: absolute;
+      right: -1em;
+    }
+    &#bird-1{
+      top: 3.4em;
+      left: 70%;
+      transform: rotate(-15deg) scaleY(0.75);
+      animation: 2s bird-1 forwards infinite;
+      &:before, &:after{
+        border-color: white;
+        width: ($radius/($radius*1.25))+em;
+        height: ($radius/($radius*1.25))+em;
+      }
+    }
+    &#bird-2{
+      top: 3.75em;
+      left: 78%;
+      transform: rotate(15deg) scale(0.75, 0.5);
+      animation: 2s bird-2 forwards infinite;
+      &:before, &:after{
+        border-color: white;
+        width: ($radius/($radius*1.25))+em;
+        height: ($radius/($radius*1.25))+em;
+      }
+      &:before{
+        left: -1em;
+      }
+      &:after{
+        right: -1em;
+      }
+    }
   }
 }
 
@@ -40,21 +108,42 @@ body {
 
 
 
-.cloud-group-1, .cloud-group-2 {
+.cloud-group-1, .cloud-group-2, .full-cloud {
   position: absolute;  
   width: 350px;
   height: 100px;
-  z-index: -1
+  z-index: 2;
+}
+
+#full-1{
+  img {
+    width: 20px;
+    height: 10px;
+    left: 15px;
+    top: 80px;
+    animation: full-1 30s linear infinite;
+  }
+}
+
+#full-2 {
+  img{
+    width: 25px;
+    height: 15px;
+    left: 200px;
+    top: 100px;
+    animation: full-2 30s linear infinite;
+  }
 }
 
 .cloud-group-1 {
   bottom: 60px;
   left: -341px;  
-  animation: cloud-group-1 20s 10s linear infinite;
+  animation: cloud-group-1 20s 5s linear infinite;
   .cloud-1 {
     height: 3px;
     left: 30px;
     top: -15px;
+    width: 70px;
   }
   .cloud-2 {
     top: -2px;
@@ -79,7 +168,7 @@ body {
 }
 
 .cloud-group-2 {
-  bottom: 60px;
+  bottom: 35px;
   left: -341px;
   animation: cloud-group-2 20s linear infinite;
 }
@@ -125,13 +214,15 @@ body {
 }
 
 @keyframes cloud-group-2 {
-  0% { left: -341px             }
-  100%   { left: calc(100% + 100px) }
+  0% { left: -20%           }
+  50% { left: 80% }    
+  100%   { left: -20% }
 }
 
 @keyframes cloud-group-1 {
-  0% { left: -341px             }
-  100%  { left: calc(100% + 100px) }
+  0% { left: -20%           }
+  50% { left: 80% }    
+  100%   { left: -20% }
 }
 
 @keyframes cloud2 {
@@ -143,4 +234,46 @@ body {
   }
 }
 
+@keyframes bird-1{
+  0%{
+    transform: rotate(-15deg) scaleY(0.75);
+  }
+  50%{
+    transform: rotate(15deg) scaleY(0.75);
+  }
+  100%{
+    transform: rotate(-15deg) scaleY(0.75);
+  }
+}
+@keyframes bird-2{
+  0%{
+    transform: rotate(15deg) scale(0.75, 0.5);
+  }
+  50%{
+    transform: rotate(-15deg) scale(0.75, 0.5);
+  }
+  100%{
+    transform: rotate(15deg) scale(0.75, 0.5);
+  }
+}
 
+@keyframes sun {
+  from {
+    bottom: 65px;
+  }
+  to {
+    bottom: 150px;
+  }
+}
+
+@keyframes full-1 {
+  0% {left: -10px}
+  50% {left: 260px}
+  100% {left: -10px}
+}
+
+@keyframes full-2 {
+  0% {left: 230px}
+  50% {left: -10px}
+  100% {left: 230px;}
+}
