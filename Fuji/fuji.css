@@ -67,20 +67,28 @@ body {
       .sun {
         position: absolute;
         background: red;
-        height: 55px;
-        width: 55px;
+        height: 45px;
+        width: 45px;
         border-radius: 50%;
-        right: 10px;
+        left: 10px;
         animation: sun 20s linear infinite;
         z-index: -1;
       }
-      img {
-        height: 213px;
-        width: 207px;
-        z-index: -1;
+      #pagoda {
+        z-index: 2;
         position: absolute;
-        bottom: 10px;
-        left: 0px;
+        top: -3px;
+        right: -72px;
+        width: 177px;
+        height: 277px;      
+      }
+      #fujipic {
+        height: 102px;
+        width: 240px;
+        z-index: 1;
+        position: absolute;
+        top: 85px;
+        left: -22px;
       }
       .bird{
         position: absolute;
@@ -145,13 +153,13 @@ body {
   position: absolute;  
   width: 350px;
   height: 100px;
-  z-index: 2;
+  z-index: -1;
 }
 
 #full-1{
   img {
-    width: 35px;
-    height: 20px;
+    width: 57px;
+    height: 22px;
     left: 15px;
     top: 40px;
     animation: full-1 30s linear infinite;
@@ -160,7 +168,7 @@ body {
 
 #full-2 {
   img{
-    width: 25px;
+    width: 30px;
     height: 15px;
     left: 200px;
     top: 80px;
@@ -293,7 +301,7 @@ body {
 
 @keyframes sun {
   from {
-    bottom: 35px;
+    bottom: 63px;
   }
   to {
     bottom: 250px;
@@ -315,8 +323,8 @@ body {
 @keyframes sunrise {
   0%   { background-position: 0% 50%   }
   70%  { background-position: 100% 50% }
-  80% { background-position: 70% 50%   }
-  90% { background-position: 40% 50%   }
+  80%, 95% { background-position: 70% 50%   }
+  98% { background-position: 40% 50%   }
   100% { background-position: 0% 50%   }  
 }
 
@@ -328,6 +336,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 .set span
 {
@@ -336,7 +345,7 @@ body {
     background: linear-gradient(8deg, rgba(252,223,251,1) 0%, rgba(227,93,164,1) 100%);
     height: 10px;
     width: 10px;
-    border-radius: 5% 40% 70%;
+    border-radius: 4% 76% 36%;
 }
 .set span:nth-child(1)
 {
